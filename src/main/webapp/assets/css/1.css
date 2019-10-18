@@ -1,0 +1,29 @@
+.field-first div>button{
+   flex: 1;
+   margin-left: 20px;
+}
+.field-first >div{
+    margin-bottom: 20px;
+    display: flex;
+}
+.field-first>div:first-child{
+
+    margin-top: 20px;
+}
+.field-first>table{
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.field-first>div{
+    float: left;
+    width: 50%;
+}
+.fun{
+    display: flex !important;
+    flex-direction: column;
+}
+
+#con2 >.form-top{
+    padding-top: 20px;
+}

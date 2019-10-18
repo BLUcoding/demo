@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PersonMapper">
+
+    <resultMap type="com.pojo.Person" id="Us">
+        <id column="id" property="user_id" jdbcType="INTEGER"/>
+        <result column="name" property="user_name" jdbcType="VARCHAR"/>
+        <result column="telephone" property="user_telephone" jdbcType="VARCHAR"/>
+        <result column="information" property="user_information" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="FindUser" resultMap="Us">select * from users</select>
+    <insert id="AddPerson" parameterType="com.pojo.Person">
+insert into users(name,telephone,information) values (#{user_name},#{user_telephone},#{user_information})
+    </insert>
+
+    <update id="UpdatePerson" parameterType="com.pojo.Person">
+        update users set telephone=#{user_telephone},information=#{user_information} where name=#{user_name}
+    </update>
+    <delete id="DeletePerson" parameterType="com.pojo.Person">
+        delete  from users where users.name=#{user_name}
+    </delete>
+</mapper>
